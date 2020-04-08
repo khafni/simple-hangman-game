@@ -97,6 +97,8 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	printf("hangman game you have %d attempts!\n", atoi(argv[2]));
+	for (int i = 0; i < 100; i++)
+		printf("\n");
 	word_init(argv[1], &strs, atoi(argv[2]));
 	strs.attempts = atoi(argv[2]);
 	looper(&strs);
