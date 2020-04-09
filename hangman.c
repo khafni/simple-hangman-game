@@ -91,9 +91,9 @@ void print_ascii(void)
 int main(int argc, char **argv)
 {
 	S_strings strs;
-	if (argc < 2 || argc > 3)
+	if (argc != 3)
 	{
-		printf("lol wrong input!");
+		printf("lol wrong input , RTFM!");
 		return (0);
 	}
 	printf("hangman game you have %d attempts!\n", atoi(argv[2]));
