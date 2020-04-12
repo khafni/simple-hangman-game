@@ -7,17 +7,17 @@ void word_init(char *string, strings strs, int e)
 	int l = strlen(string);
 	strs->o_string_uc = malloc(l);
 	strs->m_string = malloc(l);
-	strcpy(strs->m_string, string);
 	strcpy(strs->o_string_uc, string);
 	for (int i = 0; i < l; i++)
 		strs->o_string_uc[i] = toupper(strs->o_string_uc[i]);
+	strcpy(strs->m_string, strs->o_string_uc);
 	for (int i = 0; i < l; i++)
 	{
 		strs->m_string[i] = toupper(strs->m_string[i]);
 		if ((i > 0 && i < l -1) && isalpha(strs->m_string[i])
-		&& strs->m_string[i] != strs->m_string[0]
-		&& strs->m_string[i] != strs->m_string[l - 1])
-			strs->m_string[i] = '-';
+		    && (strs->m_string[i] != strs->m_string[0])
+		    && (strs->m_string[i] != strs->m_string[l - 1]))
+		  strs->m_string[i] = '-';
 	}
 }
 
@@ -87,6 +87,7 @@ void print_ascii(void)
 		printf("|_____ \n");
 		printf("");
 }
+
 
 int main(int argc, char **argv)
 {
